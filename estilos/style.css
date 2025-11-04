@@ -1,73 +1,101 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 /*
 Paleta de cores
 verde: #49a09d
 lilás: #5f2c82
 */
 
-*{
+* {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body, html{
+
+html, body {
     background-color: #5f2c82;
     height: 100vh;
     width: 100vw;
 }
 
-main{
+main {
     position: relative;
     height: 100vh;
     width: 100vw;
 }
-form > div.campo{
+
+/* CAMPOS DO FORMULÁRIO */
+form > div.campo {
     background-color: #5f2c82;
-    display: block;
+    display: flex; /* Usar flex facilita alinhamento do ícone e input */
+    align-items: center;
     width: 100%;
     height: 40px;
-    border-radius: 5px;
-    margin: 5px 0px;
+    border-radius: 8px;
+    margin: 5px 0;
 }
-section#login{
+
+div.campo > label {
+    display: none;
+}
+
+div.campo > span {
+    color: white;
+    font-size: 1.5em;
+    width: 40px;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+div.campo > input {
+    background-color: #49a09d;
+    font-size: 1em;
+    border-radius: 0 8px 8px 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 8px;
+    color: white;
+}
+
+/* SEÇÃO DE LOGIN */
+section#login {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     overflow: hidden;
     height: 500px;
     width: 260px;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.450);
-    transition: width .3s, heigth .3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+    transition: width .3s, height .3s; /* corrigido "heigth" -> "height" */
     transition-timing-function: ease;
 }
-div.campo > label {
-    display: none;
 
-}
-section#login > div#imagem{
-    display: block;
-    background: #5f2c82 url(../imagens/mobilefirst1.png) no-repeat;
+section#login > div#imagem {
+    background: #5f2c82 url(../imagens/mobilefirst1.png) no-repeat center center;
     background-size: cover;
-    background-position: center center;
     height: 200px;
 }
-section#login > div#formulario{
-    display: block;
+
+section#login > div#formulario {
     padding: 10px;
 }
-div#formulario > h1{
+
+div#formulario > h1 {
     text-align: center;
     margin-bottom: 10px;
 }
-div#formulario > p{
+
+div#formulario > p {
     text-align: justify;
     font-size: 0.8em;
 }
 
+/* BOTÃO DE ENTRAR */
 form > input[type=submit] {
     display: block;
     font-size: 1em;
@@ -78,29 +106,35 @@ form > input[type=submit] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color .3s;
 }
-form > input[type=submit]:hover{
+
+form > input[type=submit]:hover {
     background-color: #234644;
 }
-form > a.botao{
+
+/* BOTÃO SECUNDÁRIO (LINK) */
+form > a.botao {
     display: block;
     text-align: center;
     font-size: 1em;
     width: 100%;
     height: 40px;
     text-decoration: none;
-    padding-top: 5px;
+    padding-top: 8px;
     margin-top: 5px;
     background-color: white;
     color: #234644;
     border-radius: 5px;
     border: 1px solid #234644;
+    transition: all .3s;
 }
 
-form > a.botao:hover{
+form > a.botao:hover {
     background-color: #234644;
-    color:white;
+    color: white;
 }
-form > a.botao > span{
+
+form > a.botao > span {
     font-size: 0.9em;
 }
